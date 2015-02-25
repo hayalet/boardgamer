@@ -1,0 +1,37 @@
+<h1>Admin - Add Game</h1>
+<hr>
+<form ng-submit="updateGame()" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="inputName">Name</label>
+        <input type="text" id="inputName" class="form-control" placeholder="Name" ng-model="game.name" required>
+    </div>
+    <div class="form-group">
+        <label for="inputPublisher">Publisher</label>
+        <input type="text" id="inputPublisher" class="form-control" placeholder="Publisher" ng-model="game.publisher" required>
+    </div>
+    <div class="form-group">
+        <label for="inputYear">Year</label>
+        <input type="text" id="inputYear" class="form-control" placeholder="Year" ng-model="game.year" required>
+    </div>
+    <div class="form-group">
+        <label for="inputPlayers">Players</label>
+        <input type="text" id="inputPlayers" class="form-control" placeholder="Year" ng-model="game.players" required>
+    </div>
+    <div class="form-group">
+        <label for="inputCategory">Category</label>
+        <select id="inputCategory" class="form-control" ng-model="game.category" ng-options="category.name for category in categories track by category._id" required>
+            <option value="">Select category</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="inputFile">Description</label>
+        <textarea ui-tinymce ng-model="game.description"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="inputFile">Banner Image</label>
+        <input type="file" id="inputFile" file-model="game.image" ng-if="!game.image">
+        <img src="{{game.image}}" style="width: 100%; display: block" ng-if="game.image">
+    </div>
+    <button class="btn btn-primary" type="submit">Add</button>
+    <a class="btn btn-link" href="/admin/users">Cancel</a>
+</form>

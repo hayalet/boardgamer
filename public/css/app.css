@@ -1,0 +1,52 @@
+body {
+    padding-top: 50px;
+}
+
+.form-signin,
+.form-signup {
+    max-width: 330px;
+    margin: 0 auto;
+}
+
+.error-page {
+    text-align: center;
+}
+
+.error-page h1 {
+    font-size: 200px;
+}
+
+.main-view {
+    margin-top: 30px;
+}
+
+.admin-menu {
+    margin-top: 20px;
+}
+
+.cover-image {
+    background-size: cover;
+    height: 400px;
+}
+
+.review p:nth-child(1) {
+    line-height: 60px;
+    text-align: center;
+}
+
+.review p:nth-child(2) {
+    background: silver;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.detail-page table {
+    width: 100%;
+}
+
+.detail-page td {
+    width: 25%;
+    padding: 5px;
+    border: 1px solid silver;
+    box-sizing: border-box;
+}

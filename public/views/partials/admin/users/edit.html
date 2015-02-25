@@ -1,0 +1,19 @@
+<h1>Admin - Edit User</h1>
+<hr>
+<form ng-submit="updateUser()">
+    <div class="form-group">
+        <label for="inputUsername">Username</label>
+        <input type="text" id="inputUsername" class="form-control" placeholder="Username" ng-model="user.username" required>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" ng-model="user.email" required>
+    </div>
+    <div class="form-group">
+        <label for="inputRole">Role</label>
+        <select ng-model="user.role" id="inputRole" class="form-control" ng-options="option.title for option in userRoles track by option.val" required>
+        </select>
+    </div>
+    <button class="btn btn-primary" type="submit">Update</button>
+    <a class="btn btn-link" href="/admin/users">Cancel</a>
+</form>

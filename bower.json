@@ -1,0 +1,23 @@
+{
+  "name": "pai",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Mateusz Łuczak <hay4let@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular-cookies": "~1.3.12",
+    "angular-resource": "~1.3.12",
+    "angular-ui-router": "~0.2.13",
+    "bootstrap": "~3.3.2",
+    "angular": "~1.3.12",
+    "font-awesome": "~4.3.0",
+    "tinymce": "~4.1.7",
+    "angular-ui-tinymce": "~0.0.5",
+    "angular-bootstrap": "~0.12.0",
+    "moment": "~2.9.0",
+    "lodash": "~3.2.0"
+  }
+}

@@ -1,0 +1,10 @@
+<h1>{{user.username}}</h1>
+<hr/>
+<strong>User since: {{user.created}}</strong>
+<h3>Collection ({{user.games.length}} games)</h3>
+<hr/>
+<div ng-repeat="game in user.games" style="overflow: hidden">
+    <div class="game" style="width: 33%; float: left"><a href="/games/{{game._id}}">{{game.name}}</a></div>
+    <div class="plays" style="width: 33%; float: left">{{game.plays}} plays</div>
+    <div class="add-play" style="width: 33%; float: left"><span class="glyphicon glyphicon-tower" title="Record a play" style="cursor: pointer" ng-click="addPlay(game)"></span></div>
+</div>

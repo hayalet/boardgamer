@@ -1,0 +1,24 @@
+<h1>Admin - Categories</h1>
+<hr>
+<a href="/admin/categories/add" class="btn btn-default">Add category</a>
+<br><br>
+<table class="table" ng-if="categories.length > 0">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="category in categories">
+        <td>{{category.name}}</td>
+        <td>
+            <a class="btn btn-link btn-sm" href="/admin/categories/{{category._id}}/edit"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+            <button class="btn btn-link btn-sm" confirm="delete(category)" confirm-msg="Are you sure you want delete game {{game.name}}?">
+                <span class="glyphicon glyphicon-trash"></span> Delete
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div ng-if="categories.length === 0">There are currently no categories</div>

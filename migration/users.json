@@ -1,0 +1,2 @@
+{ "_id" : { "$oid" : "54d65d0f197b0a9f0a158bb9" }, "username" : "Hayalet", "email" : "hayalet@o2.pl", "hash_password" : "ae63ea0e32350f30bc0c54037379d8d973c2b331", "salt" : "523451223145", "role" : { "bitMask" : 2, "title" : "user" }, "__v" : 0 }
+{ "_id" : { "$oid" : "54d65d299cd2d50d0ccfd0ca" }, "username" : "Admin", "email" : "admin@admin.pl", "hash_password" : "95868a578a27f5b19deb5a8659b57fe606e31ba8", "salt" : "47354421968", "role" : { "bitMask" : 4, "title" : "admin" }, "__v" : 0 }

@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <h3>Games ({{games.length}})</h3>
+            <table class="table" ng-if="games.length > 0">
+                <thead>
+                    <tr>
+                        <th>Game</th>
+                        <th>Title</th>
+                        <th>Reviews</th>
+                        <th data-access-level="accessLevels.user" >Collection</th>
+                    </tr>
+                </thead>
+                <tr ng-repeat="game in games">
+                    <td><img src="{{game.image}}" style="height: 80px; width: 80px;"></td>
+                    <td><h4 style="line-height: 60px"><a href="/games/{{game._id}}">{{game.name}}</a> <small>({{game.year}})</small></h4></td>
+                    <td><p style="line-height: 80px; text-align: center">{{game.reviews.length}}</p></td>
+                    <td data-access-level="accessLevels.user" style="text-align: center"><span class="glyphicon glyphicon-plus" style="line-height: 80px; cursor: pointer" title="Add to collection" ng-click="addToCollection(game)" ng-hide="game.inCollection"></span><span class="glyphicon glyphicon-ok" style="line-height: 80px; color: silver;" ng-show="game.inCollection" title="Already in collection"></span></td>
+                </tr>
+            </table>
+            <div ng-if="!games.length">
+                <h3 style="color: grey; text-align: center; margin-top: 50px">There are no games in this category</h3>
+            </div>
+        </div>
+
+        <div class="col-sm-4" style="margin-top: 80px">
+            <h5>Filter by category</h5>
+            <ul>
+                <li ng-repeat="category in categories">
+                    <a href="#" ng-class="{active: category.name === currentFilter}" ng-click="filter(category.name)">{{category.name}}</a>
+                </li>
+                <li><a href="#" ng-class="{active: !currentFilter}" ng-click="reset()">All</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

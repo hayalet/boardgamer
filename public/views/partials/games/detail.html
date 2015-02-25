@@ -1,0 +1,41 @@
+<div class="cover-image" style="background-image: url('{{game.image}}')"></div>
+
+<div class="container detail-page">
+    <h1>{{game.name}} <small>{{game.year}}</small></h1>
+    <table>
+        <tr>
+            <td><strong>Publisher:</strong></td>
+            <td>{{game.publisher}}</td>
+            <td><strong>Category:</strong></td>
+            <td>{{category.name}}</td>
+        </tr>
+        <tr>
+            <td><strong>Players:</strong></td>
+            <td>{{game.players}}</td>
+            <td><strong>Reviews:</strong></td>
+            <td>{{game.reviews.length}}</td>
+        </tr>
+    </table>
+    <h3>Description</h3>
+    <hr/>
+    <p compile-html="game.description"></p>
+    <br/>
+    <h3>Reviews ({{game.reviews.length || 0}})</h3>
+    <hr/>
+    <p ng-if="game.reviews.length === 0">No reviews yet</p>
+    <div class="review" style="overflow: hidden" ng-repeat="review in game.reviews">
+        <p style="width: 20%; float: left;"><strong>{{review.author}}</strong></p>
+        <p  style="width: 80%; float: left;">{{review.review}}</p>
+    </div>
+    <div data-access-level='accessLevels.user'>
+        <h3>Write a review</h3>
+        <hr/>
+        <form ng-submit="addReview()">
+            <div class="form-group">
+                <textarea class="form-control" style="height: 150px" ng-model="review.review" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">Add review</button>
+        </form>
+    </div>
+
+</div>

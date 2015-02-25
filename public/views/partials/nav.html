@@ -1,0 +1,33 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="NavCtrl">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Boardgamer</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li active-nav><a href="/games">Games</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li data-access-level="accessLevels.anon" active-nav><a href="/signin">Sign in</a></li>
+                <li data-access-level="accessLevels.user" class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome, <strong>{{user.username}}</strong><span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/profile">Profile</a></li>
+                        <li data-access-level='accessLevels.admin'><a href="/admin">Admin</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" ng-click="logout()">Sign out</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <typeahead items="games" href="_id" title="name" model="name" prompt="Search game"/>
+            </form>
+        </div>
+    </div>
+</nav>
